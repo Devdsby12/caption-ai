@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: caption-rewriter-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: OPENROUTER_API_KEY
+        value: your_openrouter_api_key_here
